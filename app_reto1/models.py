@@ -85,7 +85,7 @@ class Estado_ticket(models.Model):
 # CLASE TICKET Y CARACTERISTICAS
 class Ticket(models.Model):
     equipo_a_reparar = models.ForeignKey(Equipo, on_delete=models.CASCADE)
-    num_referencia = models.IntegerField() 
+    num_referencia = models.IntegerField()  
     descripcion = models.CharField(max_length=20)
     detalles = models.CharField(max_length=500)
     fecha_apertura = models.DateTimeField()
