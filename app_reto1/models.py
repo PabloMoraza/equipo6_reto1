@@ -11,7 +11,7 @@ class Empleado(models.Model):
     
     # FUNCIÓN PARA QUE DEVUELVA EL NOMBRE, APELLIDO Y DNI DEL EMPLEADO 
     def __str__(self):
-        return self.nombre, self.apellido1, self.DNI
+        return f"{self.apellido1} {self.apellido2}, {self.nombre} --- {self.DNI}"
 #---------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ class Proveedor(models.Model):
     
     # FUNCIÓN PARA QUE DEVUELVA EL NOMBRE Y TELEFONO DEL PROVEEDOR
     def __str__(self):
-        return self.nombre, self.telefono
+        return self.nombre
 
 
 # CLASE PLANTA CON SUS CARACTERISTICAS 
@@ -34,7 +34,7 @@ class Planta(models.Model):
     
     # FUNCIÓN PARA QUE DEVUELVA EL NOMBRE DE LA PLANTA
     def __str__(self):
-        return self.nombre,
+        return self.nombre
 
 
 # CLASE EQUIPO CON SUS CARACTERISTICAS
@@ -50,7 +50,7 @@ class Equipo(models.Model):
     
     # FUNCIÓN PARA QUE DEVUELVA EL NUMERO DE SERIE, MODELO Y TIPO DEL EQUIPO SOLICITADO
     def __str__(self):
-        return self.num_serie, self.modelo, self.tipo_equipo
+        return f"{self.marca} --- {self.modelo} --- {self.tipo_equipo}"
 #---------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------
 
@@ -84,6 +84,7 @@ class Estado_ticket(models.Model):
 
 # CLASE TICKET Y CARACTERISTICAS
 class Ticket(models.Model):
+    equipo_a_reparar = models.ForeignKey(Equipo, on_delete=models.CASCADE)
     num_referencia = models.IntegerField() 
     descripcion = models.CharField(max_length=20)
     detalles = models.CharField(max_length=500)
@@ -97,7 +98,7 @@ class Ticket(models.Model):
 
     # FUNCIÓN PARA QUE DEVUELVA EL NUMERO DE REFERENCIA, DESCRIPCION Y EMPLEADO QUE SE ENCARGA DEL TICKET
     def __str__(self):
-        return self.num_referencia, self.descripcion, self.empleado_asignado
+        return f"{self.num_referencia} --- {self.descripcion} por: {self.empleado_asignado} "
 #---------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------
 
