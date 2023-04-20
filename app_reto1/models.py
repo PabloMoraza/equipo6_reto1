@@ -5,7 +5,7 @@ class Empleado(models.Model):
     DNI = models.CharField(max_length=9)
     nombre = models.CharField(max_length=20)
     apellido1 = models.CharField(max_length=20)
-    apellido2 = models.CharField(max_length=20)
+    apellido2 = models.CharField(max_length=20, null=True, blank=True)
     email = models.EmailField()
     telefono = models.IntegerField()
     
@@ -86,19 +86,19 @@ class Estado_ticket(models.Model):
 class Ticket(models.Model):
     equipo_a_reparar = models.ForeignKey(Equipo, on_delete=models.CASCADE)
     num_referencia = models.IntegerField()  
-    descripcion = models.CharField(max_length=20)
+    descripcion = models.CharField(max_length=100)
     detalles = models.CharField(max_length=500)
     fecha_apertura = models.DateTimeField()
-    fecha_resolucion = models.DateTimeField()
+    fecha_resolucion = models.DateTimeField(null=True, blank=True)
     urgencia = models.ForeignKey(Urgencia, on_delete=models.CASCADE)
     tipo_ticket = models.ForeignKey(Tipo_ticket, on_delete=models.CASCADE)
     estado_ticket = models.ForeignKey(Estado_ticket, on_delete=models.CASCADE)
     empleado_asignado = models.ForeignKey(Empleado, on_delete=models.CASCADE)
-    comentarios_ticket = models.CharField(max_length=500)
+    comentarios_ticket = models.CharField(max_length=500, null=True, blank=True)
 
     # FUNCIÓN PARA QUE DEVUELVA EL NUMERO DE REFERENCIA, DESCRIPCION Y EMPLEADO QUE SE ENCARGA DEL TICKET
     def __str__(self):
-        return f"{self.num_referencia} --- {self.descripcion} por: {self.empleado_asignado} "
+        return f"{self.num_referencia} --- {self.equipo_a_reparar} --- {self.descripcion} por: {self.empleado_asignado} "
 #---------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------
 
