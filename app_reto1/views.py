@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from equipo6_reto1.app_reto1.models import Equipo, Ticket
+from .models import Equipo, Ticket
 
 
 
