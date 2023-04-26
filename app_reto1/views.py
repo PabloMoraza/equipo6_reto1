@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from .models import Empleado, Planta, Equipo
+from .models import Ticket, Urgencia
 from django.http import HttpResponse
 # from .models import Equipo, Ticket
 
@@ -26,19 +26,23 @@ from django.http import HttpResponse
 #    model = Ticket
 # # ------------------------------------------------------
 
-# Prueba martin listado empleados
-def index_empleados(request):
-    empleados = Empleado.objects.order_by("apellido1")
-    output = ", ".join([d.apellido1 for d in empleados])
+# Prueba  listado tickets
+
+
+def index_ticket(request):
+    ticket = Ticket.objects.order_by("num_referencia")
+    output = ", ".join(
+        [f"{e.num_referencia}  {e.equipo_a_reparar}" for e in ticket])
     return HttpResponse(output)
-# Prueba martin datos de un empleado
-def show_empleados(request, empleado_id):
-    empleado = Empleado.objects.get(pk=empleado_id)
-    output = f'{empleado.apellido1} {empleado.apellido2}, {empleado.nombre} DNI: {empleado.DNI} Contacto: {empleado.email} {empleado.telefono}'
+# Prueba martin datos de un ticket
+
+
+def show_ticket(request, ticket_id):
+    ticket = Ticket.objects.get(pk=ticket_id)
+    output = f"{ticket.num_referencia}: {ticket.equipo_a_reparar}, {ticket.descripcion} {ticket.detalles} {ticket.fecha_apertura} {ticket.fecha_resolucion} {ticket.urgencia} {ticket.tipo_ticket} {ticket.estado_ticket} {ticket.empleado_asignado} {ticket.comentarios_ticket} "
     return HttpResponse(output)
-# Prueba martin equipos por planta
-def index_equipos_por_planta(request, planta_id):
-    planta = Planta.objects.get(pk=planta_id)
-    output = ", ".join([f"{e.num_serie} {e.marca} {e.modelo}" for e in planta.equipo_set.all()])
-    # output = ", ".join(["{e.num_serie} {e.marca} {e.modelo}" for e in planta.equipo_set.all()])
+ # Prueba martin ticket por urgencia
+def index_ticket_x_urgencias(request, urgencia_id):
+    urgencia = Urgencia.objects.get(pk=urgencia_id)
+    output = ", ".join([f"{e.num_referencia} {e.equipo_a_reparar}" for e in urgencia.ticket_set.all()])
     return HttpResponse(output)
