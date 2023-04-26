@@ -9,19 +9,19 @@ from django.http import HttpResponse
 def prueba(request):
     return HttpResponse("PRUEBA!")
 
+# ----------------------------------------------------
+# VISTAS DE EQUIPO
+class EquipoListView(ListView):
+    model = Equipo
+
+class EquipoDetailView(DetailView):
+   model = Equipo
+# ------------------------------------------------------
 # # ----------------------------------------------------
-# # VISTAS DE EQUIPO
-# class EquipoListView(ListView):
-#     model = Equipo
+# VISTAS DE TICKET
+class TicketListView(ListView):
+    model = Ticket
 
-# class EquipoDetailView(DetailView):
-#    model = Equipo
-# # ------------------------------------------------------
-# # # ----------------------------------------------------
-# # VISTAS DE TICKET
-# class TicketListView(ListView):
-#     model = Ticket
-
-# class TicketDetailView(DetailView):
-#    model = Ticket
-# # ------------------------------------------------------
+class TicketDetailView(DetailView):
+   model = Ticket
+# ------------------------------------------------------
