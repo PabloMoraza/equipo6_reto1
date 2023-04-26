@@ -11,7 +11,7 @@ class Empleado(models.Model):
     
     # FUNCIÓN PARA QUE DEVUELVA EL NOMBRE, APELLIDO Y DNI DEL EMPLEADO 
     def __str__(self):
-        return f"{self.apellido1} {self.apellido2}, {self.nombre}"
+        return f"{self.apellido1}, {self.nombre}"
 #---------------------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------------------
 
