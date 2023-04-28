@@ -34,7 +34,7 @@ from django.http import HttpResponse
 def index_ticket(request):
     tickets = get_list_or_404(Ticket.objects.order_by("num_referencia"))
     context = {"lista_tickets" : tickets}
-    return render(request, "index.html", context)
+    return render(request, "ticket_lista.html", context)
 
 
 # datos de un ticket basico

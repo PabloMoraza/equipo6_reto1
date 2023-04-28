@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block titulo %} listado de tickets {% endblock %}
+
+{% block contenido %}
+<p>Listado de tickets</p>
+<h2>{{ titulo_pagina }}</h2>
+<h3>{{ departamento.nombre }}</h3>
+{% if lista_tickets %}
+    <ul>
+        {% for e in lista_tickets %}
+        <li>
+            <!-- <a href="/appEmpresaDjango/empleados/{{ e.id }}">{{ e.num_referencia}}</a> -->
+            {{ e.num_referencia}}
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay Tickets creados.</p>
+{% endif %}
+
+{% endblock contenido %}
