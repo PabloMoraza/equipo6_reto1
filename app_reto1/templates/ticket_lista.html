@@ -7,16 +7,35 @@
 <h2>{{ titulo_pagina }}</h2>
 <h3>{{ departamento.nombre }}</h3>
 {% if lista_tickets %}
-    <ul>
+<ul>
+    <table>
+        <tr>
+            <th>Fecha aperura</th>
+            <th>Urgencia</th>
+            <th>Estado</th>
+            <th>Numero num_referencia
+            <th>Equipo</th>
+            <th>Empleado asignado</th>
+            <th>Tipo</th>
+            <th></th>
+        </tr>
+
         {% for e in lista_tickets %}
-        <li>
-            <!-- <a href="/appEmpresaDjango/empleados/{{ e.id }}">{{ e.num_referencia}}</a> -->
-            {{ e.num_referencia}}
-        </li>
+        <tr>
+            <td>{{ e.fecha_apertura}}</td>
+            <td>{{ e.urgencia}}</td>
+            <td>{{ e.estado_ticket}}</td>
+            <td>{{ e.num_referencia}}</td>
+            <td>{{ e.equipo_a_reparar}}</td>
+            <td>{{ e.empleado_asignado}}</td>
+            <td>{{ e.tipo_ticket}}</td>
+            <td><a href="/aplicacion/ticket/{{ e.id }}">Ver detalles</a></td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
+</ul>
 {% else %}
-    <p>No hay Tickets creados.</p>
+<p>No hay Tickets creados.</p>
 {% endif %}
 
 {% endblock contenido %}

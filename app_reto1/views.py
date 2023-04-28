@@ -41,7 +41,7 @@ def index_ticket(request):
 def show_ticket(request, ticket_id):
     ticket = get_object_or_404(Ticket, pk=ticket_id)
     context = {"ticket" : ticket}
-    return render(request, "tickets.html", context)
+    return render(request, "ticket_descripcion.html", context)
 
 
 # ticket por urgencia
