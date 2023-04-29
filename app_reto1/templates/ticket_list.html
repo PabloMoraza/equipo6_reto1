@@ -6,8 +6,16 @@
 <p>Listado de tickets</p>
 <h2>{{ titulo_pagina }}</h2>
 <h3>{{ departamento.nombre }}</h3>
+
+<!-- <ul>Filtrar por Urgencia
+<li><a href="/aplicacion/urgencias/1/tickets'">Alta</a></li>
+<li><a href="/aplicacion/urgencias/2/tickets'">Media</a></li>
+<li><a href="/aplicacion/urgencias/3/tickets'">Baja</a></li>
+</ul> -->
+
 {% if lista_tickets %}
 <ul>
+    <a href="ticket/create">Crear Ticket</a>
     <table>
         <tr>
             <th>Fecha aperura</th>
@@ -23,6 +31,7 @@
         {% for e in lista_tickets %}
         <tr>
             <td>{{ e.fecha_apertura}}</td>
+            <!-- <td><a href="/aplicacion/urgencias/{{ e.urgencia}}/tickets'">{{ e.urgencia}}</a></td> -->
             <td>{{ e.urgencia}}</td>
             <td>{{ e.estado_ticket}}</td>
             <td>{{ e.num_referencia}}</td>

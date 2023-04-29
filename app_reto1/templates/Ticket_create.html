@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalle del Ticket {% endblock %}
+
+{% block contenido %}
+<h2>Nuevo Ticket</h2>
+
+<form action="{% url 'ticket_create' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.errors }}
+    {{ formulario.as_ul }}
+    <input type="submit" value="index_ticket" />
+</form>
+
+{% endblock %}
