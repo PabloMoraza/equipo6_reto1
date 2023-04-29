@@ -6,7 +6,7 @@
 <h2>Datos del Ticket</h2>
 
 {% if ticket %}
-    <ul>
+    <ul><a href="/aplicacion/ticket/{{ticket.id}}/update"> Modificar</a>
         <li>
             {{ ticket.num_referencia}}
         </li>

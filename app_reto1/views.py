@@ -43,3 +43,10 @@ class TicketCreateView(View):
             return redirect('tickets')
 
         return render(request, 'Ticket_create.html', {'formulario': formulario})
+    
+class TicketUpdateView(UpdateView):
+    model = Ticket
+    template_name = "ticket_update.html"
+    success_url = "/aplicacion/"
+    fields = ['equipo_a_reparar', 'num_referencia', 'descripcion', 'detalles', 'fecha_apertura', 'fecha_resolucion', 'urgencia', 'tipo_ticket', 'estado_ticket','empleado_asignado','comentarios_ticket']
+
