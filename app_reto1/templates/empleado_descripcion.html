@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalle del Empleado {% endblock %}
+
+{% block contenido %}
+<h2>Datos del Empleado</h2>
+
+{% if empleado %}
+    <ul><a href="/aplicacion/empleados/{{empleado.id}}/update"> Modificar</a>
+        <a href="/aplicacion/empleados/{{empleado.id}}/delete"> Borrar</a>
+        <li>
+            {{ empleado.DNI}}
+        </li>
+        <li>
+            {{ empleado.nombre}}
+        </li>
+        <li>
+            {{ empleado.apellido1}}
+        </li>
+        <li>
+            {{ empleado.apellido2}}
+        </li>
+        <li>
+            {{ empleado.email}}
+        </li>
+        <li>
+            {{ empleado.telefono}}
+        </li>
+      
+
+    </ul>
+{% else %}
+    <p>No existe este Empleado.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Ticket,Equipo
+from .models import Empleado, Ticket,Equipo
 
 
 class TicketForm(forms.ModelForm):
@@ -11,4 +11,10 @@ class TicketForm(forms.ModelForm):
 class EquipoForm(forms.ModelForm):
     class Meta:
         model = Equipo
+        fields = '__all__'
+
+
+class EmpleadoForm(forms.ModelForm):
+    class Meta:
+        model = Empleado
         fields = '__all__'

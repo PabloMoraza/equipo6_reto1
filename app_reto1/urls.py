@@ -20,5 +20,14 @@ urlpatterns = [
     path('equipos/<pk>/update', views.EquipoUpdateView.as_view(),name = 'update_equipo'),
     #Borrar tickets
     path('equipos/<pk>/delete', views.EquipoDeleteView.as_view(), name= 'delete_equipo'),
+    # Visualizar empleados
+    path('empleados/', views.index_empleados, name='empleados'),
+    path("empleados/<int:empleado_id>/", views.show_empleado, name="detalleempleado"),
+    # Crear empleados
+    path('empleados/create', views.EmpleadoCreateView.as_view(), name='empleado_create'),
+    # Editar empleados
+    path('empleados/<pk>/update', views.EmpleadoUpdateView.as_view(),name = 'empleado_equipo'),
+    #Borrar empleados
+    path('empleados/<pk>/delete', views.EmpleadoDeleteView.as_view(), name= 'empleado_equipo'),
 
 ]

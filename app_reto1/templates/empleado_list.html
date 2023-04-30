@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block titulo %} listado de empleados {% endblock %}
+
+{% block contenido %}
+<p>Listado de empleados</p>
+{% if lista_empleados %}
+<ul>
+    <a href="/aplicacion/empleados/create">Crear Empleado</a>
+    <table>
+        <tr>
+            <th>DNI</th>
+            <th>nombre</th>
+            <th>apellido1</th>
+            <th>apellido2</th>            
+            <th>email</th>
+            <th>telefono</th>
+        </tr>
+
+        {% for e in lista_empleados %}
+        <tr>
+            <td>{{ e.DNI}}</td>
+            <td>{{ e.nombre}}</td>
+            <td>{{ e.apellido1}}</td>
+            <td>{{ e.apellido2}}</td>
+            <td>{{ e.email}}</td>
+            <td>{{ e.telefono}}</td>            
+            <td><a href="/aplicacion/empleados/{{ e.id }}">Ver detalles</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</ul>
+{% else %}
+<p>No hay Empleados añadidos.</p>
+{% endif %}
+
+{% endblock contenido %}
