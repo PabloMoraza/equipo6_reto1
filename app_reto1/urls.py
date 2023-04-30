@@ -11,6 +11,7 @@ urlpatterns = [
     path('ticket/<pk>/update', views.TicketUpdateView.as_view(),name = 'update_ticket'),
     #Borrar tickets
     path('ticket/<pk>/delete', views.TicketDeleteView.as_view(), name= 'delete_ticket'),
-
+    # Visualizar equipos
+    path('equipos/', views.index_equpos, name='equipos'),
 
 ]

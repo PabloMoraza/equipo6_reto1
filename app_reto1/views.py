@@ -1,6 +1,6 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.shortcuts import render, redirect
-from .models import Ticket, Urgencia, Tipo_ticket, Estado_ticket, Empleado
+from .models import Ticket, Urgencia, Tipo_ticket, Estado_ticket, Empleado, Equipo
 from django.views import View
 from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView
 from app_reto1.forms import TicketForm
@@ -43,17 +43,29 @@ class TicketCreateView(View):
             return redirect('tickets')
 
         return render(request, 'Ticket_create.html', {'formulario': formulario})
-    
+
+    # Modificar ticket
+
+
 class TicketUpdateView(UpdateView):
     model = Ticket
     template_name = "ticket_update.html"
     success_url = "/aplicacion/"
-    fields = ['equipo_a_reparar', 'num_referencia', 'descripcion', 'detalles', 'fecha_apertura', 'fecha_resolucion', 'urgencia', 'tipo_ticket', 'estado_ticket','empleado_asignado','comentarios_ticket']
+    fields = ['equipo_a_reparar', 'num_referencia', 'descripcion', 'detalles', 'fecha_apertura',
+              'fecha_resolucion', 'urgencia', 'tipo_ticket', 'estado_ticket', 'empleado_asignado', 'comentarios_ticket']
+
+    
+# borrar ticket
 
 class TicketDeleteView(DeleteView):
     model = Ticket
-    template_name ="delete.html"
+    template_name = "delete.html"
     success_url = "/aplicacion/"
 
-    
+# Lista de Equipos
 
+
+def index_equpos(request):
+    equipos = get_list_or_404(Equipo.objects.order_by("num_serie"))
+    context = {"lista_equipos": equipos}
+    return render(request, "equipo_list.html", context)

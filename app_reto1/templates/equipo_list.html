@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %} listado de tickets {% endblock %}
+
+{% block contenido %}
+<p>Listado de tickets</p>
+{% if lista_equipos %}
+<ul>
+    <a href="ticket/create">Crear Equipo</a>
+    <table>
+        <tr>
+            <th>Numero referencia</th>
+            <th>marca</th>
+            <th>modelo</th>
+            <th>tipo equipo</th>
+            <th>fecha adquisicion</th>
+            <th>proveedor</th>
+            <th>planta</th>
+        </tr>
+
+        {% for e in lista_equipos %}
+        <tr>
+            <td>{{ e.num_serie}}</td>
+            <td>{{ e.marca}}</td>
+            <td>{{ e.modelo}}</td>
+            <td>{{ e.tipo_equipo}}</td>
+            <td>{{ e.fecha_adquisicion}}</td>
+            <td>{{ e.proveedor}}</td>
+            <td>{{ e.planta}}</td>
+            <td><a href="/aplicacion/ticket/{{ e.id }}">Ver detalles</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</ul>
+{% else %}
+<p>No hay Equipos creados.</p>
+{% endif %}
+
+{% endblock contenido %}
