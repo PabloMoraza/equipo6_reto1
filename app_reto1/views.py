@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Ticket, Urgencia, Tipo_ticket, Estado_ticket, Empleado, Equipo
 from django.views import View
 from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView
-from app_reto1.forms import TicketForm
+from app_reto1.forms import TicketForm, EquipoForm
 
 
 # Lista de tickets
@@ -54,7 +54,7 @@ class TicketUpdateView(UpdateView):
     fields = ['equipo_a_reparar', 'num_referencia', 'descripcion', 'detalles', 'fecha_apertura',
               'fecha_resolucion', 'urgencia', 'tipo_ticket', 'estado_ticket', 'empleado_asignado', 'comentarios_ticket']
 
-    
+
 # borrar ticket
 
 class TicketDeleteView(DeleteView):
@@ -69,3 +69,35 @@ def index_equpos(request):
     equipos = get_list_or_404(Equipo.objects.order_by("num_serie"))
     context = {"lista_equipos": equipos}
     return render(request, "equipo_list.html", context)
+
+# datos de un Equipos
+
+
+def show_equipo(request, equipo_id):
+    equipo = get_object_or_404(Equipo, pk=equipo_id)
+    context = {"equipo": equipo}
+    return render(request, "equipo_descripcion.html", context)
+
+# Crear Equipo
+
+
+class EquipoCreateView(View):
+    # Llamada para mostrar la página con el formulario de creación
+    def get(self, request, *args, **kwargs):
+        formulario = EquipoForm()
+        context = {
+            'formulario': formulario
+        }
+        return render(request, 'equipo_create.html', context)
+
+    # Llamada para procesar la creación del ticket
+    def post(self, request, *args, **kwargs):
+        formulario = EquipoForm(request.POST)
+        if formulario.is_valid():
+
+            formulario.save()
+
+            # Volvemos a la lista de ticket
+            return redirect('equipos')
+
+        return render(request, 'equipo_create.html', {'formulario': formulario})

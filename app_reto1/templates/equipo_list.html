@@ -6,7 +6,7 @@
 <p>Listado de tickets</p>
 {% if lista_equipos %}
 <ul>
-    <a href="ticket/create">Crear Equipo</a>
+    <a href="/aplicacion/equipos/create">Crear Equipo</a>
     <table>
         <tr>
             <th>Numero referencia</th>
@@ -27,7 +27,7 @@
             <td>{{ e.fecha_adquisicion}}</td>
             <td>{{ e.proveedor}}</td>
             <td>{{ e.planta}}</td>
-            <td><a href="/aplicacion/ticket/{{ e.id }}">Ver detalles</a></td>
+            <td><a href="/aplicacion/equipos/{{ e.id }}">Ver detalles</a></td>
         </tr>
         {% endfor %}
     </table>

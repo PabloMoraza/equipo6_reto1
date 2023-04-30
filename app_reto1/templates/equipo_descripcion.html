@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalle del Equipo {% endblock %}
+
+{% block contenido %}
+<h2>Datos del Equipo</h2>
+
+{% if equipo %}
+    <ul><a href="/aplicacion/ticket/{{ticket.id}}/update"> Modificar</a>
+        <a href="/aplicacion/ticket/{{ticket.id}}/delete"> Borrar</a>
+        <li>
+            {{ equipo.num_serie}}
+        </li>
+        <li>
+            {{ equipo.marca}}
+        </li>
+        <li>
+            {{ equipo.modelo}}
+        </li>
+        <li>
+            {{ equipo.tipo_equipo}}
+        </li>
+        <li>
+            {{ equipo.fecha_adquisicion}}
+        </li>
+        <li>
+            {{ equipo.fecha_puesta_marcha}}
+        </li>
+        <li>
+            {{ equipo.proveedor}}
+        </li>
+        <li>
+            {{ equipo.planta}}
+        </li>
+
+    </ul>
+{% else %}
+    <p>No existe este Equipo.</p>
+{% endif %}
+
+{% endblock %}

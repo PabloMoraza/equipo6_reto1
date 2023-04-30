@@ -13,5 +13,8 @@ urlpatterns = [
     path('ticket/<pk>/delete', views.TicketDeleteView.as_view(), name= 'delete_ticket'),
     # Visualizar equipos
     path('equipos/', views.index_equpos, name='equipos'),
+    path("equipos/<int:equipo_id>/", views.show_equipo, name="detalleequipo"),
+    # Crear equipos
+    path('equipos/create', views.EquipoCreateView.as_view(), name='equipo_create'),
 
 ]

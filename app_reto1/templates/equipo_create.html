@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalle del Equipo {% endblock %}
+
+{% block contenido %}
+<h2>Nuevo Equipo</h2>
+
+<form action="{% url 'equipo_create' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.errors }}
+    {{ formulario.as_ul }}
+    <input type="submit" value="Crear"/>
+</form>
+
+{% endblock %}
