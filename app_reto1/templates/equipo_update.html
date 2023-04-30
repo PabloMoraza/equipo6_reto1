@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalle del Equipo {% endblock %}
+
+{% block contenido %}
+<h2>Modificar Equipo</h2>
+
+<form method="post"> 
+    {% csrf_token %} 
+    {{ form.as_p }} 
+    <input type="submit" value="Save"> 
+</form> 
+
+{% endblock %}

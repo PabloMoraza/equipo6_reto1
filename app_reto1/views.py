@@ -101,3 +101,21 @@ class EquipoCreateView(View):
             return redirect('equipos')
 
         return render(request, 'equipo_create.html', {'formulario': formulario})
+
+    # Modificar Equipo
+
+
+class EquipoUpdateView(UpdateView):
+    model = Equipo
+    template_name = "equipo_update.html"
+    success_url = "/aplicacion/equipos/"
+    fields = ['num_serie', 'marca', 'modelo', 'tipo_equipo', 'fecha_adquisicion',
+              'fecha_puesta_marcha', 'proveedor', 'planta']
+    
+
+    
+# Borrar equipo
+class EquipoDeleteView(DeleteView):
+    model = Equipo
+    template_name = "delete.html"
+    success_url = "/aplicacion/equipos/"
