@@ -50,3 +50,10 @@ class TicketUpdateView(UpdateView):
     success_url = "/aplicacion/"
     fields = ['equipo_a_reparar', 'num_referencia', 'descripcion', 'detalles', 'fecha_apertura', 'fecha_resolucion', 'urgencia', 'tipo_ticket', 'estado_ticket','empleado_asignado','comentarios_ticket']
 
+class TicketDeleteView(DeleteView):
+    model = Ticket
+    template_name ="delete.html"
+    success_url = "/aplicacion/"
+
+    
+

@@ -7,6 +7,7 @@
 
 {% if ticket %}
     <ul><a href="/aplicacion/ticket/{{ticket.id}}/update"> Modificar</a>
+        <a href="/aplicacion/ticket/{{ticket.id}}/delete"> Borrar</a>
         <li>
             {{ ticket.num_referencia}}
         </li>

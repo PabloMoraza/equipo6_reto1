@@ -7,7 +7,10 @@ urlpatterns = [
     path("ticket/<int:ticket_id>/", views.show_ticket, name="detalleticket"),
     # Crear tickets
     path('ticket/create', views.TicketCreateView.as_view(), name='ticket_create'),
-    # Crear tickets
+    # Editar tickets
     path('ticket/<pk>/update', views.TicketUpdateView.as_view(),name = 'update_ticket'),
+    #Borrar tickets
+    path('ticket/<pk>/delete', views.TicketDeleteView.as_view(), name= 'delete_ticket'),
+
 
 ]
