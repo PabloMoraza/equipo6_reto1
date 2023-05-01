@@ -150,7 +150,7 @@ class EmpleadoCreateView(View):
 
     # Llamada para procesar la creación del empleado
     def post(self, request, *args, **kwargs):
-        formulario = EquipoForm(request.POST)
+        formulario = EmpleadoForm(request.POST)
         if formulario.is_valid():
 
             formulario.save()
