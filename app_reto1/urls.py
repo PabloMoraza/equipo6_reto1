@@ -26,8 +26,17 @@ urlpatterns = [
     # Crear empleados
     path('empleados/create', views.EmpleadoCreateView.as_view(), name='empleado_create'),
     # Editar empleados
-    path('empleados/<pk>/update', views.EmpleadoUpdateView.as_view(),name = 'empleado_equipo'),
+    path('empleados/<pk>/update', views.EmpleadoUpdateView.as_view(),name = 'empleado_update'),
     #Borrar empleados
-    path('empleados/<pk>/delete', views.EmpleadoDeleteView.as_view(), name= 'empleado_equipo'),
+    path('empleados/<pk>/delete', views.EmpleadoDeleteView.as_view(), name= 'empleado_delete'),
+    # Visualizar proveedores
+    path('proveedores/', views.index_proveedores, name='proveedores'),
+    path("proveedores/<int:proveedor_id>/", views.show_proveedor, name="detalleproveedor"),
+    # Crear proveedores
+    path('proveedores/create', views.ProveedorCreateView.as_view(), name='proveedor_create'),
+    # Editar proveedores
+    path('proveedores/<pk>/update', views.ProveedorUpdateView.as_view(),name = 'proveedor_update'),
+    #Borrar proveedores
+    path('proveedores/<pk>/delete', views.ProveedorDeleteView.as_view(), name= 'proveedor_delete'),
 
 ]

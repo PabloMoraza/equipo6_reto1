@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalle del Proveedor {% endblock %}
+
+{% block contenido %}
+<h2>Nuevo Proveedor</h2>
+
+<form action="{% url 'proveedor_create' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.errors }}
+    {{ formulario.as_ul }}
+    <input type="submit" value="Crear"/>
+</form>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalle del Proveedor {% endblock %}
+
+{% block contenido %}
+<h2>Datos del Proveedor</h2>
+
+{% if proveedor %}
+    <ul><a href="/aplicacion/proveedores/{{proveedor.id}}/update"> Modificar</a>
+        <a href="/aplicacion/proveedores/{{proveedor.id}}/delete"> Borrar</a>
+        <li>
+            {{ proveedor.nombre}}
+        </li>
+        <li>
+            {{ proveedor.telefono}}
+        </li>
+      
+
+    </ul>
+{% else %}
+    <p>No existe este Proveedor.</p>
+{% endif %}
+
+{% endblock %}

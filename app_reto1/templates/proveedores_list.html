@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %} listado de Proveedores {% endblock %}
+
+{% block contenido %}
+<p>Listado de Proveedores</p>
+{% if lista_proveedores %}
+<ul>
+    <a href="/aplicacion/proveedores/create">Crear Empleado</a>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Telefono</th>
+        </tr>
+
+        {% for e in lista_proveedores %}
+        <tr>
+            <td>{{ e.nombre}}</td>
+            <td>{{ e.telefono}}</td>
+          
+            <td><a href="/aplicacion/proveedores/{{ e.id }}">Ver detalles</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</ul>
+{% else %}
+<p>No hay Proveedores Añadidos.</p>
+{% endif %}
+
+{% endblock contenido %}
