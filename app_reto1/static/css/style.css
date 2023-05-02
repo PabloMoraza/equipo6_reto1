@@ -17,8 +17,15 @@ header {
 .der{
     width: 30%;
     display: flex;
+    flex-wrap: wrap;
+
 
 }
+.der_izq{
+    display: flex;
+    justify-content: space-between;
+}
+
 .link_head{
     text-decoration: none;  
     color: #BEE3DB;
