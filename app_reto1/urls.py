@@ -38,5 +38,11 @@ urlpatterns = [
     path('proveedores/<pk>/update', views.ProveedorUpdateView.as_view(),name = 'proveedor_update'),
     #Borrar proveedores
     path('proveedores/<pk>/delete', views.ProveedorDeleteView.as_view(), name= 'proveedor_delete'),
+    # tickets de un empleado
+    path('empleados/<int:empleado_id>/tickets',views.tickets_de_empleado, name = "tickets_de_empleado"),
+    # tickets de un equipo
+    path('equipos/<int:equipo_id>/tickets', views.tickets_de_equipo, name = "tickets_de_equipo" ),
+    # equipos de un proveedor
+    path('proveedores/<int:proveedor_id>/equipos', views.equipos_de_proveedor, name = "equipos_de_proveedor" ),
 
 ]

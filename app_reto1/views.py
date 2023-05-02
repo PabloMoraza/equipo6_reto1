@@ -227,3 +227,24 @@ class ProveedorDeleteView(DeleteView):
     model = Proveedor
     template_name = "delete.html"
     success_url = "/aplicacion/proveedores/"
+
+# Muestra el listado de tickets de un empleado concreto
+def tickets_de_empleado(request, empleado_id):
+	empleado = get_object_or_404(Empleado, pk=empleado_id)
+	ticket =  empleado.ticket_set.all()
+	context = {'empleado': empleado, 'lista_tickets' : ticket }
+	return render(request, 'ticket_list.html', context)
+
+# Muestra el listado de tickets de un equipo concreto
+def tickets_de_equipo(request, equipo_id):
+	equipo = get_object_or_404(Equipo, pk=equipo_id)
+	ticket =  equipo.ticket_set.all()
+	context = {'equipo': equipo, 'lista_tickets' : ticket }
+	return render(request, 'ticket_list.html', context)
+
+# Muestra el listado de equipos de un proveedor concreto
+def equipos_de_proveedor(request, proveedor_id):
+	proveedor = get_object_or_404(Proveedor, pk=proveedor_id)
+	equipo =  proveedor.equipo_set.all()
+	context = {'proveedor': proveedor, 'lista_equipos' : equipo }
+	return render(request, 'equipo_list.html', context)
