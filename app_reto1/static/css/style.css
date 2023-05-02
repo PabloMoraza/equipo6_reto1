@@ -1,0 +1,43 @@
+body {
+    font: 300 normal 17px Noto Sans, arial, sans-serif;
+    color: black
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #555B6E;
+    align-items: center;
+}
+.header_izquierdo {
+    padding-left: 10px;
+    color: #BEE3DB;
+}
+
+
+.der{
+    width: 30%;
+    display: flex;
+
+}
+.link_head{
+    text-decoration: none;  
+    color: #BEE3DB;
+}
+.link_head:hover{
+    color: #FFD6BA;
+}
+footer {
+    padding-left: 10px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    background-color: #555B6E;
+    color: #BEE3DB;
+    display: flex;
+    justify-content: center;
+}
+table{
+    border: 2px solid;
+    border-collapse: collapse;
+}
+
+

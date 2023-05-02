@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="estilos.css">
-        <title>{% block titulo %}Deustomach{% endblock %}</title>
-    </head>
-    <body>
-        <header>
-	        <h1>Deustomach Innovation S.L.</h1>
-            <h2>Menú:</h2>
-            <ul>
 
-                <li><a href="/aplicacion/">Gestor de tickets</a></li>
-                <li><a href="/aplicacion/equipos/">Gestor de equipos</a></li>
-                <li><a href="/aplicacion/empleados/">Gestor de empleados</a></li>
-                <li><a href="/aplicacion/proveedores/">Gestor de proveedores</a></li>
-            </ul>
-            <hr>
-        </header>
-        <main>
-            {% block contenido %}{% endblock %}
-        </main>
-        <footer>
-            <hr>
-            <p>Aplicación desarrollada en Ingeniería Web</p>
-        </footer>
-    </body>
+<head>
+
+    <!-- <link rel="stylesheet" href="equipo6_reto1/templates/estilos.css"> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block titulo %}Deustomach{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <div class="header_izquierdo">
+            <h1>Deustomach Innovation S.L.</h1>
+        </div>
+        <div class="header_medio_aux"></div>
+
+        <div class="der">
+            <div class="der_izq">
+                <a href="/aplicacion/" class="link_head">Gestor de tickets</a>
+                <a href="/aplicacion/empleados/" class="link_head">Gestor de empleados</a>
+            </div>
+            <div class="der_der">
+                <a href="/aplicacion/equipos/" class="link_head">Gestor de equipos</a>
+                <a href="/aplicacion/proveedores/" class="link_head">Gestor de proveedores</a>
+            </div>
+        </div>
+
+
+
+    </header>
+    <main>
+        {% block contenido %}{% endblock %}
+    </main>
+    <footer>
+        <div>
+            <h2 class="h2f">Estamos en:</h2>
+            <p class="pf">Bilbao: C/ San Mames 944 000 001</p>
+            <p class="pf">Pamplona: C/ Siete de Julio 948 000 002</p>
+            <p class="pf">Vitoria-Gasteiz: Av. Gasteiz 945 000 003</p>
+        </div>
+    </footer>
+</body>
+
 </html>
