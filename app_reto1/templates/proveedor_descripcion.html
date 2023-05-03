@@ -8,9 +8,12 @@
 {% if proveedor %}
 <ul>
     <div class="botones_descripcion">
-        <button class="boton"><a class="enlace" href="/aplicacion/proveedores/{{proveedor.id}}/update">Modificar</a></button>
-        <button class="boton"><a class="enlace" href="/aplicacion/proveedores/{{proveedor.id}}/delete">Borrar</a></button>
-        <button class="boton"><a class="enlace" href="/aplicacion/proveedores/{{proveedor.id}}/equipos"> Mostrar sus equipos</a></button>
+        <button class="boton"><a class="enlace"
+                href="/aplicacion/proveedores/{{proveedor.id}}/update">Modificar</a></button>
+        <button class="boton"><a class="enlace"
+                href="/aplicacion/proveedores/{{proveedor.id}}/delete">Borrar</a></button>
+        <button class="boton"><a class="enlace" href="/aplicacion/proveedores/{{proveedor.id}}/equipos"> Mostrar sus
+                equipos</a></button>
     </div>
     <li>
         Nombre: {{ proveedor.nombre}}

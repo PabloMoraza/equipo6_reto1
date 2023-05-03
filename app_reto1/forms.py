@@ -19,6 +19,7 @@ class EmpleadoForm(forms.ModelForm):
         model = Empleado
         fields = '__all__'
 
+
 class ProveedorForm(forms.ModelForm):
     class Meta:
         model = Proveedor
