@@ -19,12 +19,22 @@ header {
 .der {
     width: 30%;
     display: flex;
+    flex-direction:row;
     flex-wrap: wrap;
+    /* background-color: #BEE3DB; */
 }
 
 .der_izq {
     display: flex;
+    flex-direction:column;
     justify-content: space-between;
+    
+}
+.der_der {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    
 }
 
 .link_head {
@@ -46,7 +56,12 @@ footer {
     display: flex;
     justify-content: center;
 }
-
+.h2f{
+    font-size: 15px;
+}
+.pf{
+    font-size: 12px;
+}
 table {
     border: 2px solid;
     border-collapse: collapse;
@@ -76,6 +91,8 @@ td {
 
 .enlace {
     margin: 0px 0px 0px 0px;
+    text-decoration: none;
+    color: #BEE3DB;
 }
 
 .boton {
@@ -83,6 +100,7 @@ td {
     margin: 0px auto 0px auto;
     padding: 0%;
     font: 300 normal 17px Noto Sans, arial, sans-serif;
+    background-color: #555B6E;
 }
 
 form {
@@ -110,4 +128,8 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 10px;
+}
+.botones_descripcion{
+    display: flex;
+    justify-content: space-between;
 }

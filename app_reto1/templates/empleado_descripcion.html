@@ -7,26 +7,28 @@
 
 {% if empleado %}
 <ul>
+    <div class="botones_descripcion">
     <button class="boton"><a class="enlace" href="/aplicacion/empleados/{{empleado.id}}/update"> Modificar</a></button>
     <button class="boton"><a class="enlace" href="/aplicacion/empleados/{{empleado.id}}/delete"> Borrar</a></button>
     <button class="boton"><a class="enlace" href="/aplicacion/empleados/{{empleado.id}}/tickets"> Mostrar sus tickets </a></button>
+</div>
     <li>
-        {{ empleado.DNI}}
+        DNI: {{ empleado.DNI}}
     </li>
     <li>
-        {{ empleado.nombre}}
+        Nombre: {{ empleado.nombre}}
     </li>
     <li>
-        {{ empleado.apellido1}}
+        Apellido 1: {{ empleado.apellido1}}
     </li>
     <li>
-        {{ empleado.apellido2}}
+         Apellido 2: {{ empleado.apellido2}}
     </li>
     <li>
-        {{ empleado.email}}
+        Correo electronico: {{ empleado.email}}
     </li>
     <li>
-        {{ empleado.telefono}}
+        Numero de telefono: {{ empleado.telefono}}
     </li>
 
 

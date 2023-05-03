@@ -3,7 +3,7 @@
 {% block titulo %} listado de equipos {% endblock %}
 
 {% block contenido %}
-<p>Listado de equipos</p>
+<h2>Listado de equipos</h2>
 {% if lista_equipos %}
 <ul>
     <button class="boton"><a class="enlace" href="/aplicacion/equipos/create">Crear Equipo</a></button>
@@ -16,6 +16,7 @@
             <th>Fecha adquisicion</th>
             <th>Proveedor</th>
             <th>Planta</th>
+            <th></th>
         </tr>
 
         {% for e in lista_equipos %}

@@ -6,44 +6,48 @@
 <h2>Datos del Ticket</h2>
 
 {% if ticket %}
-    <ul><button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ticket.id}}/update"> Modificar</a></button>
+<ul>
+    <div class="botones_descripcion">
+        <button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ticket.id}}/update"> Modificar</a></button>
         <button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ticket.id}}/delete"> Borrar</a></button>
-        <li>
-            {{ ticket.num_referencia}}
-        </li>
-        <li>
-            {{ ticket.equipo_a_reparar}}
-        </li>
-        <li>
-            {{ ticket.descripcion}}
-        </li>
-        <li>
-            {{ ticket.detalles}}
-        </li>
-        <li>
-            {{ ticket.fecha_apertura}}
-        </li>
-        <li>
-            {{ ticket.fecha_resolucion}}
-        </li>
-        <li>
-            {{ ticket.urgencia}}
-        </li>
-        <li>
-            {{ ticket.tipo_ticket}}
-        </li>
-        <li>
-            {{ ticket.estado_ticket}}
-        </li>
-        <li>
-            {{ ticket.empleado_asignado}}
-        </li>
-        <li>
-            {{ ticket.comentarios_ticket}}
-        </li>
-    </ul>
+    </div>
+    <li>
+
+        Numero de referencia: {{ ticket.num_referencia}}
+    </li>
+    <li>
+        Equipo a reparar: {{ ticket.equipo_a_reparar}}
+    </li>
+    <li>
+        Descripcion: {{ ticket.descripcion}}
+    </li>
+    <li>
+        Detalles: {{ ticket.detalles}}
+    </li>
+    <li>
+        Fecha de apertura: {{ ticket.fecha_apertura}}
+    </li>
+    <li>
+        Fecha de resolucion: {{ ticket.fecha_resolucion}}
+    </li>
+    <li>
+        Nivel de urgencia: {{ ticket.urgencia}}
+    </li>
+    <li>
+        Tipo de ticket: {{ ticket.tipo_ticket}}
+    </li>
+    <li>
+        Estado actual: {{ ticket.estado_ticket}}
+    </li>
+    <li>
+        Empleado asignado: {{ ticket.empleado_asignado}}
+    </li>
+    <li>
+        Comentarios: {{ ticket.comentarios_ticket}}
+    </li>
+</ul>
 {% else %}
-    <p>No existe este Ticket.</p>
+<p>No existe este Ticket.</p>
 {% endif %}
 
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block titulo %} listado de Proveedores {% endblock %}
 
 {% block contenido %}
-<p>Listado de Proveedores</p>
+<h2>Listado de Proveedores</h2>
 {% if lista_proveedores %}
 <ul>
     <button class="boton"><a class="enlace" href="/aplicacion/proveedores/create">Crear Proveedor </a></button>
@@ -11,6 +11,7 @@
         <tr>
             <th>Nombre</th>
             <th>Telefono</th>
+            <th></th>
         </tr>
 
         {% for e in lista_proveedores %}

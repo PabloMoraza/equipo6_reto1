@@ -6,32 +6,36 @@
 <h2>Datos del Equipo</h2>
 
 {% if equipo %}
-<ul><button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/update"> Modificar</a></button>
-    <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/delete"> Borrar</a></button>
-    <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/tickets"> Mostrar sus tickets </a></button>
+
+<ul>
+    <div class="botones_descripcion">
+        <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/update"> Modificar</a></button>
+        <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/delete"> Borrar</a></button>
+        <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/tickets"> Mostrar sus tickets</a></button>
+    </div>
     <li>
-        {{ equipo.num_serie}}
+        Numero de serie: {{ equipo.num_serie}}
     </li>
     <li>
-        {{ equipo.marca}}
+        Marca: {{ equipo.marca}}
     </li>
     <li>
-        {{ equipo.modelo}}
+        Modelo: {{ equipo.modelo}}
     </li>
     <li>
-        {{ equipo.tipo_equipo}}
+        Tipo de equipo: {{ equipo.tipo_equipo}}
     </li>
     <li>
-        {{ equipo.fecha_adquisicion}}
+        Fecha de adquisicion: {{ equipo.fecha_adquisicion}}
     </li>
     <li>
-        {{ equipo.fecha_puesta_marcha}}
+        Fecha de puesta en marcha: {{ equipo.fecha_puesta_marcha}}
     </li>
     <li>
-        {{ equipo.proveedor}}
+        Proveedor: {{ equipo.proveedor}}
     </li>
     <li>
-        {{ equipo.planta}}
+        Planta: {{ equipo.planta}}
     </li>
 
 </ul>
