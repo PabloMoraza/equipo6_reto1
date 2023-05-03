@@ -1,6 +1,8 @@
 body {
     font: 300 normal 17px Noto Sans, arial, sans-serif;
-    color: black
+    color: black;
+    background-color: whitesmoke;
+
 }
 
 header {
@@ -56,12 +58,15 @@ footer {
     display: flex;
     justify-content: center;
 }
+
 .h2f{
     font-size: 15px;
 }
 .pf{
     font-size: 12px;
 }
+
+
 table {
     border: 2px solid;
     border-collapse: collapse;
