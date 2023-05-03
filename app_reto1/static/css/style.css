@@ -45,6 +45,35 @@ footer {
 table{
     border: 2px solid;
     border-collapse: collapse;
+    margin-right: 50px;
 }
 
+th{
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 3px;
+    background-color: #555B6E; 
+    color: #BEE3DB;
 
+}
+td{
+    border: 2px solid;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+.enlace:hover{
+    color: #FFD6BA;
+    margin: 0px 0px 0px 0px;
+    background-color: #555B6E;
+}
+.enlace{
+    margin: 0px 0px 0px 0px;
+}
+.boton{
+    display: flex;
+    margin: 0px auto 0px auto;
+    padding: 0%;
+    font: 300 normal 17px Noto Sans, arial, sans-serif;
+
+}

@@ -6,16 +6,16 @@
 <p>Listado de equipos</p>
 {% if lista_equipos %}
 <ul>
-    <a href="/aplicacion/equipos/create">Crear Equipo</a>
+    <button class="boton"><a class="enlace" href="/aplicacion/equipos/create">Crear Equipo</a></button>
     <table>
         <tr>
             <th>Numero referencia</th>
-            <th>marca</th>
-            <th>modelo</th>
-            <th>tipo equipo</th>
-            <th>fecha adquisicion</th>
-            <th>proveedor</th>
-            <th>planta</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Tipo equipo</th>
+            <th>Fecha adquisicion</th>
+            <th>Proveedor</th>
+            <th>Planta</th>
         </tr>
 
         {% for e in lista_equipos %}
@@ -27,7 +27,10 @@
             <td>{{ e.fecha_adquisicion}}</td>
             <td>{{ e.proveedor}}</td>
             <td>{{ e.planta}}</td>
-            <td><a href="/aplicacion/equipos/{{ e.id }}">Ver detalles</a></td>
+            <td>
+                <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{ e.id }}">Ver
+                        detalles</a></button>
+            </td>
         </tr>
         {% endfor %}
     </table>

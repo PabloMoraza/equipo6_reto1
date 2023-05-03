@@ -6,8 +6,8 @@
 <h2>Datos del Ticket</h2>
 
 {% if ticket %}
-    <ul><a href="/aplicacion/ticket/{{ticket.id}}/update"> Modificar</a>
-        <a href="/aplicacion/ticket/{{ticket.id}}/delete"> Borrar</a>
+    <ul><button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ticket.id}}/update"> Modificar</a></button>
+        <button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ticket.id}}/delete"> Borrar</a></button>
         <li>
             {{ ticket.num_referencia}}
         </li>

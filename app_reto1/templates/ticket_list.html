@@ -7,7 +7,7 @@
 
 {% if lista_tickets %}
 <ul>
-    <a href="ticket/create">Crear Ticket</a>
+    <button class="boton"><a class="enlace" href="ticket/create">Crear Ticket</a></button>
     <table>
         <tr>
             <th>Fecha aperura</th>
@@ -30,7 +30,10 @@
             <td>{{ e.equipo_a_reparar}}</td>
             <td>{{ e.empleado_asignado}}</td>
             <td>{{ e.tipo_ticket}}</td>
-            <td><a href="/aplicacion/ticket/{{ e.id }}">Ver detalles</a></td>
+            <td>
+                <button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ e.id }}">Ver
+                        detalles</a></button>
+            </td>
         </tr>
         {% endfor %}
     </table>

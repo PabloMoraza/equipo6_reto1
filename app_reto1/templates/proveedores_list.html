@@ -6,7 +6,7 @@
 <p>Listado de Proveedores</p>
 {% if lista_proveedores %}
 <ul>
-    <a href="/aplicacion/proveedores/create">Crear Proveedor </a>
+    <button class="boton"><a class="enlace" href="/aplicacion/proveedores/create">Crear Proveedor </a></button>
     <table>
         <tr>
             <th>Nombre</th>
@@ -17,8 +17,11 @@
         <tr>
             <td>{{ e.nombre}}</td>
             <td>{{ e.telefono}}</td>
-          
-            <td><a href="/aplicacion/proveedores/{{ e.id }}">Ver detalles</a></td>
+
+            <td>
+                <button class="boton"><a class="enlace" href="/aplicacion/proveedores/{{ e.id }}">Ver
+                        detalles</a></button>
+            </td>
         </tr>
         {% endfor %}
     </table>

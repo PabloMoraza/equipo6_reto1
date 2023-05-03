@@ -6,37 +6,37 @@
 <h2>Datos del Equipo</h2>
 
 {% if equipo %}
-    <ul><a href="/aplicacion/equipos/{{equipo.id}}/update"> Modificar</a>
-        <a href="/aplicacion/equipos/{{equipo.id}}/delete"> Borrar</a>
-        <a href="/aplicacion/equipos/{{equipo.id}}/tickets"> Mostrar sus tickets </a>
-        <li>
-            {{ equipo.num_serie}}
-        </li>
-        <li>
-            {{ equipo.marca}}
-        </li>
-        <li>
-            {{ equipo.modelo}}
-        </li>
-        <li>
-            {{ equipo.tipo_equipo}}
-        </li>
-        <li>
-            {{ equipo.fecha_adquisicion}}
-        </li>
-        <li>
-            {{ equipo.fecha_puesta_marcha}}
-        </li>
-        <li>
-            {{ equipo.proveedor}}
-        </li>
-        <li>
-            {{ equipo.planta}}
-        </li>
+<ul><button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/update"> Modificar</a></button>
+    <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/delete"> Borrar</a></button>
+    <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/tickets"> Mostrar sus tickets </a></button>
+    <li>
+        {{ equipo.num_serie}}
+    </li>
+    <li>
+        {{ equipo.marca}}
+    </li>
+    <li>
+        {{ equipo.modelo}}
+    </li>
+    <li>
+        {{ equipo.tipo_equipo}}
+    </li>
+    <li>
+        {{ equipo.fecha_adquisicion}}
+    </li>
+    <li>
+        {{ equipo.fecha_puesta_marcha}}
+    </li>
+    <li>
+        {{ equipo.proveedor}}
+    </li>
+    <li>
+        {{ equipo.planta}}
+    </li>
 
-    </ul>
+</ul>
 {% else %}
-    <p>No existe este Equipo.</p>
+<p>No existe este Equipo.</p>
 {% endif %}
 
 {% endblock %}

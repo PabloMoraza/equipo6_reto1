@@ -6,32 +6,33 @@
 <h2>Datos del Empleado</h2>
 
 {% if empleado %}
-    <ul><a href="/aplicacion/empleados/{{empleado.id}}/update"> Modificar</a>
-        <a href="/aplicacion/empleados/{{empleado.id}}/delete"> Borrar</a>
-        <a href="/aplicacion/empleados/{{empleado.id}}/tickets"> Mostrar sus tickets </a>
-        <li>
-            {{ empleado.DNI}}
-        </li>
-        <li>
-            {{ empleado.nombre}}
-        </li>
-        <li>
-            {{ empleado.apellido1}}
-        </li>
-        <li>
-            {{ empleado.apellido2}}
-        </li>
-        <li>
-            {{ empleado.email}}
-        </li>
-        <li>
-            {{ empleado.telefono}}
-        </li>
-      
+<ul>
+    <button class="boton"><a class="enlace" href="/aplicacion/empleados/{{empleado.id}}/update"> Modificar</a></button>
+    <button class="boton"><a class="enlace" href="/aplicacion/empleados/{{empleado.id}}/delete"> Borrar</a></button>
+    <button class="boton"><a class="enlace" href="/aplicacion/empleados/{{empleado.id}}/tickets"> Mostrar sus tickets </a></button>
+    <li>
+        {{ empleado.DNI}}
+    </li>
+    <li>
+        {{ empleado.nombre}}
+    </li>
+    <li>
+        {{ empleado.apellido1}}
+    </li>
+    <li>
+        {{ empleado.apellido2}}
+    </li>
+    <li>
+        {{ empleado.email}}
+    </li>
+    <li>
+        {{ empleado.telefono}}
+    </li>
 
-    </ul>
+
+</ul>
 {% else %}
-    <p>No existe este Empleado.</p>
+<p>No existe este Empleado.</p>
 {% endif %}
 
 {% endblock %}
