@@ -4,8 +4,12 @@ body {
     background-color: whitesmoke;
 
 }
+main{
+    height: 70%;
+}
 
 header {
+    height: 15%;
     display: flex;
     justify-content: space-between;
     background-color: #555B6E;
@@ -50,13 +54,14 @@ header {
 }
 
 footer {
-    padding-left: 10px;
-    padding-bottom: 15px;
-    padding-top: 5px;
+    height: 20%;
+    width: 100%;
     background-color: #555B6E;
     color: #BEE3DB;
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
 }
 
 .h2f{
