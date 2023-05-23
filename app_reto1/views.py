@@ -1,7 +1,6 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.shortcuts import render, redirect
-
-
+from django.db.models import Q
 from .models import Ticket, Urgencia, Tipo_ticket, Estado_ticket, Empleado, Equipo, Proveedor
 from django.views import View
 from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView
@@ -124,7 +123,17 @@ class EquipoDeleteView(DeleteView):
 
 # Lista de empleados
 def index_empleados(request):
+    busqueda = request.GET.get("buscar")
     empleados = get_list_or_404(Empleado.objects.order_by("DNI"))
+    if busqueda:
+        empleados = Empleado.objects.filter(
+            Q(DNI__icontains = busqueda) |
+            Q(nombre__icontains = busqueda) |
+            Q(apellido1__icontains = busqueda) |
+            Q(apellido2__icontains = busqueda) |
+            Q(email__icontains = busqueda) |
+            Q(telefono__icontains = busqueda) 
+        ).distinct()
     context = {"lista_empleados": empleados}
     return render(request, "empleado_list.html", context)
 
