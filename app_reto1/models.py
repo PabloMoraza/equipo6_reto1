@@ -13,7 +13,7 @@ class Empleado(models.Model):
 
     # FUNCIÓN PARA QUE DEVUELVA EL NOMBRE, APELLIDO Y DNI DEL EMPLEADO
     def __str__(self):
-        return f"{self.apellido1}, {self.nombre}"
+        return self.DNI
 # ---------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ class Equipo(models.Model):
 
     # FUNCIÓN PARA QUE DEVUELVA EL NUMERO DE SERIE, MODELO Y TIPO DEL EQUIPO SOLICITADO
     def __str__(self):
-        return f"{self.num_serie} --- {self.marca} --- {self.modelo} --- {self.tipo_equipo}"
+        return self.modelo
 # ---------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------
 
@@ -101,6 +101,6 @@ class Ticket(models.Model):
 
     # FUNCIÓN PARA QUE DEVUELVA EL NUMERO DE REFERENCIA, DESCRIPCION Y EMPLEADO QUE SE ENCARGA DEL TICKET
     def __str__(self):
-        return f"{self.num_referencia} --- {self.equipo_a_reparar} --- {self.descripcion} por: {self.empleado_asignado} "
+        return self.num_referencia
 # ---------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------

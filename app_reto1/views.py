@@ -7,9 +7,22 @@ from django.views.generic import ListView, DetailView, DeleteView, CreateView, U
 from app_reto1.forms import TicketForm, EquipoForm, EmpleadoForm, ProveedorForm
 
 
+
 # Lista de tickets
 def index_ticket(request):
+    busqueda = request.GET.get("buscar")
     tickets = get_list_or_404(Ticket.objects.order_by("fecha_apertura"))
+    if busqueda:
+        tickets = Ticket.objects.filter(
+            Q(num_referencia__icontains = busqueda) |
+            Q(fecha_apertura__icontains = busqueda) |
+            Q(urgencia__gravedad__icontains = busqueda) |
+            Q(estado_ticket__estado__icontains = busqueda) |
+            Q(equipo_a_reparar__modelo__icontains = busqueda) |
+            Q(empleado_asignado__DNI__icontains = busqueda) |
+            Q(tipo_ticket__tipo__icontains = busqueda)
+        ).distinct()
+    
     context = {"lista_tickets": tickets}
     return render(request, "ticket_list.html", context)
 
