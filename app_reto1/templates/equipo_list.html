@@ -36,7 +36,11 @@
         </tr>
         {% endfor %}
     </table>
+
 </ul>
+<div>
+    {% include "paginadorequipo.html" %}
+</div>
 {% else %}
 <p>No hay Equipos creados.</p>
 {% endif %}

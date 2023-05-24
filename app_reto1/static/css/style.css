@@ -9,8 +9,7 @@ body {
 
 }
 
-
-
+ 
 header {
     /* height: 15%; */
     height: 90px;
@@ -283,7 +282,7 @@ label {
 }
 
 ul {
-    background-image: url('../images/fondoprincipal.avif');
+    /* background-image: url('../images/fondoprincipal.avif'); */
     background-size: 100%;
     border: solid 2px;
     display: flex;
