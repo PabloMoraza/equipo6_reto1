@@ -5,11 +5,13 @@
 {% block contenido %}
 <h2>Nuevo Equipo</h2>
 
-<form action="{% url 'equipo_create' %}" method="post">
+<form action="{% url 'equipo_create' %}" method="post"class="formcreate">
     {% csrf_token %}
     {{ formulario.errors }}
     {{ formulario.as_ul }}
-    <input type="submit" value="Crear" />
+    <div class="formbutton">
+        <input type="submit" value="Crear" />
+    </div>
 </form>
 
 {% endblock %}
