@@ -80,9 +80,22 @@ class TicketDeleteView(DeleteView):
 
 
 def index_equpos(request):
-    equipos = get_list_or_404(Equipo.objects.order_by("num_serie"))
-    context = {"lista_equipos": equipos}
-    return render(request, "equipo_list.html", context)
+     busqueda = request.GET.get("buscar")
+     equipos = get_list_or_404(Equipo.objects.order_by("num_serie"))
+     if busqueda:
+      equipos= Equipo.objects.filter(
+            Q(num_serie__icontains= busqueda) |
+            Q(marca__icontains = busqueda) |
+            Q(modelo__icontains = busqueda) |
+            Q(tipo_equipo__icontains = busqueda) |
+            Q(fecha_adquisicion__icontains = busqueda) |
+            Q(fecha_puesta_marcha__icontains = busqueda) |
+            Q(proveedor__nombre__icontains = busqueda) |
+            Q(planta__nombre__icontains = busqueda)
+
+     ).distinct()
+     context = {"lista_equipos": equipos}
+     return render(request, "equipo_list.html", context)
 
 # datos de un Equipos
 
@@ -132,6 +145,7 @@ class EquipoDeleteView(DeleteView):
     model = Equipo
     template_name = "delete.html"
     success_url = "/aplicacion/equipos/"
+
 
 
 # Lista de empleados
@@ -201,7 +215,13 @@ class EmpleadoDeleteView(DeleteView):
 
 # Lista de Proveedores
 def index_proveedores(request):
+    busqueda = request.GET.get("buscar")
     proveedores = get_list_or_404(Proveedor.objects.order_by("nombre"))
+    if busqueda:
+        proveedores = Proveedor.objects.filter(
+            Q(nombre__icontains = busqueda) |
+            Q(telefono__icontains = busqueda) 
+        ).distinct()
     context = {"lista_proveedores": proveedores}
     return render(request, "proveedores_list.html", context)
 
