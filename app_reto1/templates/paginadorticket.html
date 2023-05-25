@@ -1,9 +1,10 @@
 {% if paginator.num_pages > 1%}
-<div class="d-flex justify-content-center">
+
     <ul class="pagination">
         {% if lista_tickets.has_previous %}
             <li class="page-item d-none d-sm-block"><a class="page-link" href="?page={{ lista_tickets.previous_page_number }}#pagtable">Anterior</a></li>
         {% endif %}
+        
         {% for page in paginator.page_range %}
             {% if forloop.last and page != lista_tickets.number and paginator.num_pages > 7 %} 
                 {% if lista_tickets.next_page_number != paginator.num_pages%}
@@ -24,23 +25,16 @@
             <li class="page-item {% if page == lista_tickets.number %}active{% endif %}">
                 <a class="page-link" href="?page={{ page }}#pagtable">{{ page }}</a>
             </li>
+        
             {% endif %}
         {% endfor %}
+   
         {% if lista_tickets.has_next %}
             <li class="page-item d-none d-sm-block">
                 <a class="page-link" href="?page={{ lista_tickets.next_page_number }}#pagtable">Siguiente</a>
             </li>
         {% endif %}
     </ul>
-</div>
-<div class="d-flex justify-content-center d-sm-none">            
-    {% if lista_tickets.has_previous %}
-        <span class="page-item"><a  class="page-link" href="?page={{ lista_tickets.previous_page_number }}#pagtable">Anterior</a></span>
-    {% endif %}
-    {% if lista_tickets.has_next %}
-        <span class="page-item"><a class="page-link" href="?page={{ lista_tickets.next_page_number }}#pagtable">Siguiente</a></span>
-    {% endif %}
-    <br>
-    <br>
-</div>
+
+
 {% endif %}

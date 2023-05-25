@@ -9,7 +9,7 @@ body {
 
 }
 
- 
+
 header {
     /* height: 15%; */
     height: 90px;
@@ -102,49 +102,54 @@ header {
 
 .link_head:hover {
     color: #524ce8;
-}  
-.formcreate{
+}
+
+.formcreate {
     max-width: 400px;
     margin: 0 auto;
     margin-bottom: 20px;
-    
-} 
+
+}
+
 .formcreate label {
     display: block;
     font-size: 14px;
     font-weight: bold;
     color: #6c63ff;
     margin-bottom: 5px;
-  }
-  .formcreate input {
+}
+
+.formcreate input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     color: #333;
-  }
-  .formcreate input:focus {
+}
+
+.formcreate input:focus {
     outline: none;
     border-color: #6c63ff;
     box-shadow: 0 0 5px #6c63ff;
-  }
-  .formbutton {
+}
+
+.formbutton {
     display: inline-block;
     padding: 5px 5px;
-
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-  }
-  .formbutton:hover {
+}
+
+.formbutton:hover {
     background-color: #524ce8;
-  }
-  
-  select {
+}
+
+select {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
@@ -152,19 +157,19 @@ header {
     font-size: 16px;
     color: #333;
     background-color: #fff;
-  }
-  
-  select:focus {
+}
+
+select:focus {
     outline: none;
     border-color: #6c63ff;
     box-shadow: 0 0 5px #6c63ff;
-  }
-  
-  select option {
+}
+
+select option {
     font-size: 12px;
     color: #6c63ff;
     background-color: #ffffff;
-  }
+}
 
 
 
@@ -181,13 +186,14 @@ footer {
     align-self: flex-end;
 
 }
+
 h1 {
-    font-size: 28px;    
-    color:#e6e03b;
+    font-size: 28px;
+    color: #e6e03b;
     margin-bottom: 20px;
     text-transform: uppercase;
-   
-  }
+
+}
 
 h2 {
     display: flex;
@@ -213,7 +219,7 @@ h2 {
 table {
     border: 2px solid;
     border-collapse: collapse;
-    margin-right: 50px;
+
 }
 
 th {
@@ -281,24 +287,72 @@ label {
     margin-right: 5px;
 }
 
-ul {
-    /* background-image: url('../images/fondoprincipal.avif'); */
+.divprincipal {
+    background-image: url('../images/fondoprincipal.avif');
     background-size: 100%;
     border: solid 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     margin-bottom: 5px;
     height: 450px;
 }
 
 .botones_descripcion {
-    display: flex;
-    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 button {
     padding: 4px;
 
+}
+
+.pagination {
+    color: #524ce8;
+    display: flex;
+    width: 950px;
+    justify-content: center;
+
+
+}
+
+.page-item {
+    margin-left: 5px;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: #524ce8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background-color: #7874e5;
+}
+
+.descripciongeneral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.descripciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 5px;
+    background-color: #555B6E;
+    color: #BEE3DB;    
+    border-radius: 5px;
+    
+}
+li{
+    margin-bottom: 10px;
 }

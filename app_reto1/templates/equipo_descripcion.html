@@ -7,13 +7,14 @@
 
 {% if equipo %}
 
-<ul>
+<ul class="descripciongeneral">
     <div class="botones_descripcion">
         <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/update"> Modificar</a></button>
         <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/delete"> Borrar</a></button>
         <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/tickets"> Mostrar sus
                 tickets</a></button>
     </div>
+    <div class="descripciones">
     <li>
         Numero de serie: {{ equipo.num_serie}}
     </li>
@@ -38,7 +39,7 @@
     <li>
         Planta: {{ equipo.planta}}
     </li>
-
+</div>
 </ul>
 {% else %}
 <p>No existe este Equipo.</p>

@@ -6,7 +6,7 @@
 <h2>Listado de empleados</h2>
 
 {% if lista_empleados %}
-<ul>
+<div class="divprincipal">
     <button class="boton"> <a class="enlace" href="/aplicacion/empleados/create">Crear Empleado</a></button>
     <table>
         <tr>
@@ -35,10 +35,12 @@
         </tr>
         {% endfor %}
     </table>
-</ul>
-<div>
-    {% include "paginadorempleado.html" %}
+    <div>
+        {% include "paginadorempleado.html" %}
+    </div>
 </div>
+
+
 {% else %}
 <p>No hay Empleados añadidos.</p>
 {% endif %}

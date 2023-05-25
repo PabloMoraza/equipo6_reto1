@@ -33,14 +33,5 @@
         {% endif %}
     </ul>
 </div>
-<div class="d-flex justify-content-center d-sm-none">            
-    {% if lista_equipos.has_previous %}
-        <span class="page-item"><a  class="page-link" href="?page={{ lista_equipos.previous_page_number }}#pagtable">Anterior</a></span>
-    {% endif %}
-    {% if lista_equipos.has_next %}
-        <span class="page-item"><a class="page-link" href="?page={{ lista_equipos.next_page_number }}#pagtable">Siguiente</a></span>
-    {% endif %}
-    <br>
-    <br>
-</div>
+
 {% endif %}

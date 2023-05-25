@@ -6,7 +6,7 @@
 <h2>Listado de equipos</h2>
 
 {% if lista_equipos %}
-<ul>
+<div class="divprincipal">
     <button class="boton"><a class="enlace" href="/aplicacion/equipos/create">Crear Equipo</a></button>
     <table>
         <tr>
@@ -36,11 +36,11 @@
         </tr>
         {% endfor %}
     </table>
-
-</ul>
-<div>
-    {% include "paginadorequipo.html" %}
+    <div>
+        {% include "paginadorequipo.html" %}
+    </div>
 </div>
+
 {% else %}
 <p>No hay Equipos creados.</p>
 {% endif %}

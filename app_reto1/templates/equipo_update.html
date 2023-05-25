@@ -5,10 +5,12 @@
 {% block contenido %}
 <h2>Modificar Equipo</h2>
 
-<form method="post">
+<form method="post" class="formcreate">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Save">
+    <div class="formbutton">
+        <input type="submit" value="Save">
+    </div>
 </form>
 
 {% endblock %}
