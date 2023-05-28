@@ -14,32 +14,38 @@
         <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{equipo.id}}/tickets"> Mostrar sus
                 tickets</a></button>
     </div>
-    <div class="descripciones">
-    <li>
-        Numero de serie: {{ equipo.num_serie}}
-    </li>
-    <li>
-        Marca: {{ equipo.marca}}
-    </li>
-    <li>
-        Modelo: {{ equipo.modelo}}
-    </li>
-    <li>
-        Tipo de equipo: {{ equipo.tipo_equipo}}
-    </li>
-    <li>
-        Fecha de adquisicion: {{ equipo.fecha_adquisicion}}
-    </li>
-    <li>
-        Fecha de puesta en marcha: {{ equipo.fecha_puesta_marcha}}
-    </li>
-    <li>
-        Proveedor: {{ equipo.proveedor}}
-    </li>
-    <li>
-        Planta: {{ equipo.planta}}
-    </li>
-</div>
+    <div>
+        <button class="boton" id="aumentar">Aumentar</button>
+        <button class="boton" id="disminuir">Disminuir</button>
+    </div>
+    <div class="tamanos">
+        <div class="descripciones">
+            <li>
+                Numero de serie: {{ equipo.num_serie}}
+            </li>
+            <li>
+                Marca: {{ equipo.marca}}
+            </li>
+            <li>
+                Modelo: {{ equipo.modelo}}
+            </li>
+            <li>
+                Tipo de equipo: {{ equipo.tipo_equipo}}
+            </li>
+            <li>
+                Fecha de adquisicion: {{ equipo.fecha_adquisicion}}
+            </li>
+            <li>
+                Fecha de puesta en marcha: {{ equipo.fecha_puesta_marcha}}
+            </li>
+            <li>
+                Proveedor: {{ equipo.proveedor}}
+            </li>
+            <li>
+                Planta: {{ equipo.planta}}
+            </li>
+        </div>
+    </div>
 </ul>
 {% else %}
 <p>No existe este Equipo.</p>

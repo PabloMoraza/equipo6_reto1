@@ -8,35 +8,41 @@
 {% if lista_tickets %}
 <div class="divprincipal">
     <button class="boton"><a class="enlace" href="/aplicacion/ticket/create">Crear Ticket</a></button>
-    <table>
-        <tr>
-            <th>Fecha apertura</th>
-            <th>Urgencia</th>
-            <th>Estado</th>
-            <th>Numero referencia
-            <th>Equipo</th>
-            <th>Empleado asignado</th>
-            <th>Tipo</th>
-            <th></th>
-        </tr>
+    <div>
+        <button class="boton" id="aumentar">Aumentar</button>
+        <button class="boton" id="disminuir">Disminuir</button>
+    </div>
+    <div class="tamanos">
+        <table>
+            <tr>
+                <th>Fecha apertura</th>
+                <th>Urgencia</th>
+                <th>Estado</th>
+                <th>Numero referencia
+                <th>Equipo</th>
+                <th>Empleado asignado</th>
+                <th>Tipo</th>
+                <th></th>
+            </tr>
 
-        {% for e in lista_tickets %}
-        <tr>
-            <td>{{ e.fecha_apertura}}</td>
-            <!-- <td><a href="/aplicacion/urgencias/{{ e.urgencia}}/tickets'">{{ e.urgencia}}</a></td> -->
-            <td>{{ e.urgencia}}</td>
-            <td>{{ e.estado_ticket}}</td>
-            <td>{{ e.num_referencia}}</td>
-            <td>{{ e.equipo_a_reparar}}</td>
-            <td>{{ e.empleado_asignado}}</td>
-            <td>{{ e.tipo_ticket}}</td>
-            <td>
-                <button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ e.id }}">Ver
-                        detalles</a></button>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+            {% for e in lista_tickets %}
+            <tr>
+                <td>{{ e.fecha_apertura}}</td>
+                <!-- <td><a href="/aplicacion/urgencias/{{ e.urgencia}}/tickets'">{{ e.urgencia}}</a></td> -->
+                <td>{{ e.urgencia}}</td>
+                <td>{{ e.estado_ticket}}</td>
+                <td>{{ e.num_referencia}}</td>
+                <td>{{ e.equipo_a_reparar}}</td>
+                <td>{{ e.empleado_asignado}}</td>
+                <td>{{ e.tipo_ticket}}</td>
+                <td>
+                    <button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ e.id }}">Ver
+                            detalles</a></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 
     {% include "paginadorticket.html" %}
 

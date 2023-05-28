@@ -11,41 +11,47 @@
         <button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ticket.id}}/update"> Modificar</a></button>
         <button class="boton"><a class="enlace" href="/aplicacion/ticket/{{ticket.id}}/delete"> Borrar</a></button>
     </div>
-    <div class="descripciones">
-        <li>
+    <div>
+        <button class="boton" id="aumentar">Aumentar</button>
+        <button class="boton" id="disminuir">Disminuir</button>
+    </div>
+    <div class="tamanos">
+        <div class="descripciones">
+            <li>
 
-            Numero de referencia: {{ ticket.num_referencia}}
-        </li>
-        <li>
-            Equipo a reparar: {{ ticket.equipo_a_reparar}}
-        </li>
-        <li>
-            Descripcion: {{ ticket.descripcion}}
-        </li>
-        <li>
-            Detalles: {{ ticket.detalles}}
-        </li>
-        <li>
-            Fecha de apertura: {{ ticket.fecha_apertura}}
-        </li>
-        <li>
-            Fecha de resolucion: {{ ticket.fecha_resolucion}}
-        </li>
-        <li>
-            Nivel de urgencia: {{ ticket.urgencia}}
-        </li>
-        <li>
-            Tipo de ticket: {{ ticket.tipo_ticket}}
-        </li>
-        <li>
-            Estado actual: {{ ticket.estado_ticket}}
-        </li>
-        <li>
-            Empleado asignado: {{ ticket.empleado_asignado}}
-        </li>
-        <li>
-            Comentarios: {{ ticket.comentarios_ticket}}
-        </li>
+                Numero de referencia: {{ ticket.num_referencia}}
+            </li>
+            <li>
+                Equipo a reparar: {{ ticket.equipo_a_reparar}}
+            </li>
+            <li>
+                Descripcion: {{ ticket.descripcion}}
+            </li>
+            <li>
+                Detalles: {{ ticket.detalles}}
+            </li>
+            <li>
+                Fecha de apertura: {{ ticket.fecha_apertura}}
+            </li>
+            <li>
+                Fecha de resolucion: {{ ticket.fecha_resolucion}}
+            </li>
+            <li>
+                Nivel de urgencia: {{ ticket.urgencia}}
+            </li>
+            <li>
+                Tipo de ticket: {{ ticket.tipo_ticket}}
+            </li>
+            <li>
+                Estado actual: {{ ticket.estado_ticket}}
+            </li>
+            <li>
+                Empleado asignado: {{ ticket.empleado_asignado}}
+            </li>
+            <li>
+                Comentarios: {{ ticket.comentarios_ticket}}
+            </li>
+        </div>
     </div>
 </ul>
 {% else %}

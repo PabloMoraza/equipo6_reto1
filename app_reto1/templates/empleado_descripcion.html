@@ -14,25 +14,33 @@
         <button class="boton"><a class="enlace" href="/aplicacion/empleados/{{empleado.id}}/tickets"> Mostrar sus
                 tickets </a></button>
     </div>
-    <div class="descripciones">
-    <li>
-        DNI: {{ empleado.DNI}}
-    </li>
-    <li>
-        Nombre: {{ empleado.nombre}}
-    </li>
-    <li>
-        Apellido 1: {{ empleado.apellido1}}
-    </li>
-    <li>
-        Apellido 2: {{ empleado.apellido2}}
-    </li>
-    <li>
-        Correo electronico: {{ empleado.email}}
-    </li>
-    <li>
-        Numero de telefono: {{ empleado.telefono}}
-    </li>
+    <div>
+        <button class="boton" id="aumentar">Aumentar</button>
+        <button class="boton" id="disminuir">Disminuir</button>
+        
+    </div>
+
+    <div class="tamanos">
+        <div class="descripciones">
+            <li>
+                DNI: {{ empleado.DNI}}
+            </li>
+            <li>
+                Nombre: {{ empleado.nombre}}
+            </li>
+            <li>
+                Apellido 1: {{ empleado.apellido1}}
+            </li>
+            <li>
+                Apellido 2: {{ empleado.apellido2}}
+            </li>
+            <li>
+                Correo electronico: {{ empleado.email}}
+            </li>
+            <li>
+                Numero de telefono: {{ empleado.telefono}}
+            </li>
+        </div>
     </div>
 
 </ul>

@@ -8,33 +8,39 @@
 {% if lista_empleados %}
 <div class="divprincipal">
     <button class="boton"> <a class="enlace" href="/aplicacion/empleados/create">Crear Empleado</a></button>
-    <table>
-        <tr>
-            <th>DNI</th>
-            <th>Nombre</th>
-            <th>1º apellido</th>
-            <th>2º Apellido</th>
-            <th>Email</th>
-            <th>Telefono</th>
-            <th></th>
-        </tr>
+    <div>
+        <button class="boton" id="aumentar">Aumentar</button>
+        <button class="boton" id="disminuir">Disminuir</button>
+    </div>
+    <div class="tamanos">
+        <table>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>1º apellido</th>
+                <th>2º Apellido</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th></th>
+            </tr>
 
-        {% for e in lista_empleados %}
-        <tr>
-            <td>{{ e.DNI}}</td>
-            <td>{{ e.nombre}}</td>
-            <td>{{ e.apellido1}}</td>
-            <td>{{ e.apellido2}}</td>
-            <td>{{ e.email}}</td>
-            <td>{{ e.telefono}}</td>
-            <td>
-                <button class="boton">
-                    <a class="enlace" href="/aplicacion/empleados/{{ e.id }}">Ver detalles</a>
-                </button>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+            {% for e in lista_empleados %}
+            <tr>
+                <td>{{ e.DNI}}</td>
+                <td>{{ e.nombre}}</td>
+                <td>{{ e.apellido1}}</td>
+                <td>{{ e.apellido2}}</td>
+                <td>{{ e.email}}</td>
+                <td>{{ e.telefono}}</td>
+                <td>
+                    <button class="boton">
+                        <a class="enlace" href="/aplicacion/empleados/{{ e.id }}">Ver detalles</a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
     <div>
         {% include "paginadorempleado.html" %}
     </div>

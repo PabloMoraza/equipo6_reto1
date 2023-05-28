@@ -14,16 +14,22 @@
                 href="/aplicacion/proveedores/{{proveedor.id}}/delete">Borrar</a></button>
         <button class="boton"><a class="enlace" href="/aplicacion/proveedores/{{proveedor.id}}/equipos"> Mostrar sus
                 equipos</a></button>
-    </div>
-    <div class="descripciones">
-        <li>
-            Nombre: {{ proveedor.nombre}}
-        </li>
-        <li>
-            Numero de telefono: {{ proveedor.telefono}}
-        </li>
-    </div>
 
+    </div>
+    <div>
+        <button class="boton" id="aumentar">Aumentar</button>
+        <button class="boton" id="disminuir">Disminuir</button>
+    </div>
+    <div class="tamanos">
+        <div class="descripciones">
+            <li>
+                Nombre: {{ proveedor.nombre}}
+            </li>
+            <li>
+                Numero de telefono: {{ proveedor.telefono}}
+            </li>
+        </div>
+    </div>
 </ul>
 {% else %}
 <p>No existe este Proveedor.</p>

@@ -8,34 +8,40 @@
 {% if lista_equipos %}
 <div class="divprincipal">
     <button class="boton"><a class="enlace" href="/aplicacion/equipos/create">Crear Equipo</a></button>
-    <table>
-        <tr>
-            <th>Numero referencia</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Tipo equipo</th>
-            <th>Fecha adquisicion</th>
-            <th>Proveedor</th>
-            <th>Planta</th>
-            <th></th>
-        </tr>
+    <div>
+        <button class="boton" id="aumentar">Aumentar</button>
+        <button class="boton" id="disminuir">Disminuir</button>
+    </div>
+    <div class="tamanos">
+        <table>
+            <tr>
+                <th>Numero referencia</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Tipo equipo</th>
+                <th>Fecha adquisicion</th>
+                <th>Proveedor</th>
+                <th>Planta</th>
+                <th></th>
+            </tr>
 
-        {% for e in lista_equipos %}
-        <tr>
-            <td>{{ e.num_serie}}</td>
-            <td>{{ e.marca}}</td>
-            <td>{{ e.modelo}}</td>
-            <td>{{ e.tipo_equipo}}</td>
-            <td>{{ e.fecha_adquisicion}}</td>
-            <td>{{ e.proveedor}}</td>
-            <td>{{ e.planta}}</td>
-            <td>
-                <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{ e.id }}">Ver
-                        detalles</a></button>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+            {% for e in lista_equipos %}
+            <tr>
+                <td>{{ e.num_serie}}</td>
+                <td>{{ e.marca}}</td>
+                <td>{{ e.modelo}}</td>
+                <td>{{ e.tipo_equipo}}</td>
+                <td>{{ e.fecha_adquisicion}}</td>
+                <td>{{ e.proveedor}}</td>
+                <td>{{ e.planta}}</td>
+                <td>
+                    <button class="boton"><a class="enlace" href="/aplicacion/equipos/{{ e.id }}">Ver
+                            detalles</a></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
     <div>
         {% include "paginadorequipo.html" %}
     </div>
