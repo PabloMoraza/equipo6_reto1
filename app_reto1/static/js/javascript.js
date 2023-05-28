@@ -1,12 +1,18 @@
 // alert("existo")
 
-function getFontSize(){
-let tamano =  document.getElementsByClassName("tamano").fontSizetamanos
-
-    return tamano
-}
 function aumentar(){
-    console.log(getFontSize());
+    var el = document.getElementById('tamanos');
+    var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+    var fontSize = parseFloat(style); 
+    el.style.fontSize = (fontSize + 1) + 'px';
 }
-let elem = document.getElementById('aumentar');
-elem.addEventListener('click', aumentar);
+function disminuir(){
+    var el = document.getElementById('tamanos');
+    var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+    var fontSize = parseFloat(style); 
+    el.style.fontSize = (fontSize - 1) + 'px';
+}
+let elem1 = document.getElementById('aumentar');
+elem1.addEventListener('click', aumentar);
+let elem2 = document.getElementById('disminuir');
+elem2.addEventListener('click', disminuir);

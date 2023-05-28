@@ -8,10 +8,11 @@ body {
 
 
 }
-.tamanos{
+#tamanos{
     font-size: 20px;
     margin-top: 15px;
 }
+
 
 header {
     /* height: 15%; */
