@@ -8,8 +8,8 @@ class TicketForm(forms.ModelForm):
         fields = '__all__'
         labels = {
             "num_referencia": "Numero referencia",
-            "fecha_apertura": "Fecha de apertura",
-            "fecha_resolucion": "Fecha de resolucion",
+            "fecha_apertura": "Fecha de apertura (AAAA-MM-DD hh_mm_ss)",
+            "fecha_resolucion": "Fecha de resolucion (AAAA-MM-DD hh_mm_ss)",
             "tipo_ticket": "Tipo",
             "estado_ticket": "Estado",
             "empleado_asignado": "Empleado Asignado",
