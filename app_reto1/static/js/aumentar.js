@@ -12,7 +12,9 @@ function disminuir(){
     var fontSize = parseFloat(style); 
     el.style.fontSize = (fontSize - 1) + 'px';
 }
+
 let elem1 = document.getElementById('aumentar');
 elem1.addEventListener('click', aumentar);
 let elem2 = document.getElementById('disminuir');
 elem2.addEventListener('click', disminuir);
+

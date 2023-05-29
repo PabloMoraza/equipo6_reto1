@@ -3,14 +3,15 @@
 {% block titulo %} Detalle del Equipo {% endblock %}
 
 {% block contenido %}
-<h2>Nuevo Equipo</h2>
+<h2 >Nuevo Equipo</h2>
 
-<form action="{% url 'equipo_create' %}" method="post"class="formcreate">
+<form action="{% url 'equipo_create' %}" method="post" id="formlarioequipo" class="formcreate">
     {% csrf_token %}
     {{ formulario.errors }}
     {{ formulario.as_ul }}
+    <input type="button" value="Check"id="CheckEquipo">
     <div class="formbutton">
-        <input type="submit" value="Crear" />
+        <input type="submit"  value="Crear" />
     </div>
 </form>
 
