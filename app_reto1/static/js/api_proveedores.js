@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/aplicacion/proveedores/"
+const API_URL = "http://127.0.0.1:8000/aplicacion/proveedores_api/"
 
 fetch(API_URL)
     .then(response => response.json())
