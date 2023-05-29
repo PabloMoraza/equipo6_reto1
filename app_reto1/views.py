@@ -254,6 +254,11 @@ class ProveedorListView(View):
 
         return JsonResponse(list(prlist.values()), safe=False)
 
+class ProveedorDetailView(View):
+    def get(self, request, pk):
+        proveedor = Proveedor.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(proveedor))
+    
 #  def index_proveedores(request):
 #     busqueda = request.GET.get("buscar")
 #     proveedores = get_list_or_404(Proveedor.objects.order_by("nombre"))
@@ -275,10 +280,7 @@ class ProveedorListView(View):
 # Datos de Proveedores
 
 
-class ProveedorDetailView(View):
-    def get(self, request, pk):
-        proveedor = Proveedor.objects.get(pk=pk)
-        return JsonResponse(model_to_dict(proveedor))
+
 
 # def show_proveedor(request, proveedor_id):
 #     proveedor = get_object_or_404(Proveedor, pk=proveedor_id)
