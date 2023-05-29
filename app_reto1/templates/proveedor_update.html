@@ -5,9 +5,10 @@
 {% block contenido %}
 <h2>Modificar Proveedor</h2>
 
-<form method="post" class="formcreate">
+<form method="post" class="formcreate" id="formularioproveedor">
     {% csrf_token %}
     {{ form.as_p }}
+    <input type="button" value="Check" id="checkProveedor">
     <div class="formbutton">
         <input type="submit" value="Save">
     </div>

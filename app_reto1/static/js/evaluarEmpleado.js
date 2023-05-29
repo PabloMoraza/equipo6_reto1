@@ -36,9 +36,6 @@ function evaluarEmpleado() {
     if (estavacio(apell1)==1){
         alert(" El Primer apellido esta vacio")
     }
-    // if (estavacio(apell2)==1){
-    //     alert(" El Segundo apellido esta vacio");
-    // }
     if (estavacio(email)==1){
         alert(" El Email esta vacio");
     }     

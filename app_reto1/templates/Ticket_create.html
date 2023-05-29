@@ -5,10 +5,11 @@
 {% block contenido %}
 <h2>Nuevo Ticket</h2>
 
-<form action="{% url 'ticket_create' %}" method="post"class="formcreate">
+<form action="{% url 'ticket_create' %}" method="post"class="formcreate" id="formularioticket">
     {% csrf_token %}
     {{ formulario.errors }}
     {{ formulario.as_ul }}
+    <input type="button" value="Check" id="checkTicket">
     <div class="formbutton">
         <input type="submit" value="Crear" />
     </div>

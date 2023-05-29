@@ -5,10 +5,11 @@
 {% block contenido %}
 <h2>Nuevo Proveedor</h2>
 
-<form action="{% url 'proveedor_create' %}" method="post"class="formcreate">
+<form action="{% url 'proveedor_create' %}" method="post" id= "formularioproveedor "class="formcreate">
     {% csrf_token %}
     {{ formulario.errors }}
     {{ formulario.as_ul }}
+    <input type="button" value="Check" id="checkProveedor">
     <div class="formbutton">
         <input type="submit" value="Crear" />
     </div>
