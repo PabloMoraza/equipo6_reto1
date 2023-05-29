@@ -5,10 +5,11 @@
 {% block contenido %}
 <h2>Modificar Empleado</h2>
 
-<form method="post" class="formcreate">
+<form method="post" id="formlarioempleado" class="formcreate">
     {% csrf_token %}
     {{ form.as_p }}
-   
+    <input type="button" value="Generar Email" id="generaremail">
+    <input type="button" value="Check" id="checkEmpleado">
     <div class="formbutton">
         <input type="submit" value="Save">
     </div>

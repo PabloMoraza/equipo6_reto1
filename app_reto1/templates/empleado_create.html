@@ -5,10 +5,12 @@
 {% block contenido %}
 <h2>Nuevo Empleado</h2>
 
-<form action="{% url 'empleado_create' %}" method="post" class="formcreate">
+<form action="{% url 'empleado_create' %}" method="post" id="formlarioempleado" class="formcreate">
     {% csrf_token %}
     {{ formulario.errors }}
     {{ formulario.as_ul }}
+    <input type="button" value="Generar Email" id="generaremail">
+    <input type="button" value="Check" id="checkEmpleado">
     <div class="formbutton">
         <input type="submit" value="Crear" />
     </div>
