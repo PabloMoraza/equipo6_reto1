@@ -1,15 +1,17 @@
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.shortcuts import render, redirect
 from django.db.models import Q
-from .models import Ticket, Urgencia, Tipo_ticket, Estado_ticket, Empleado, Equipo, Proveedor
+from .models import Ticket, Empleado, Equipo, Proveedor
 from django.views import View
 from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView
 from app_reto1.forms import TicketForm, EquipoForm, EmpleadoForm, ProveedorForm
 from django.core.paginator import Paginator
-from django.http import Http404
-
+from django.http import Http404, JsonResponse
+from django.forms.models import model_to_dict
 
 # Lista de tickets
+
+
 def index_ticket(request):
     busqueda = request.GET.get("buscar")
     tickets = get_list_or_404(Ticket.objects.order_by("fecha_apertura"))
@@ -90,6 +92,7 @@ class TicketDeleteView(DeleteView):
 
 # Lista de Equipos
 
+
 def index_equpos(request):
     busqueda = request.GET.get("buscar")
     equipos = get_list_or_404(Equipo.objects.order_by("num_serie"))
@@ -113,7 +116,7 @@ def index_equpos(request):
 
         ).distinct()
     data = {"lista_equipos": equipos,
-            "paginator" : paginator}
+            "paginator": paginator}
     return render(request, "equipo_list.html", data)
 
 # datos de un Equipos
@@ -241,33 +244,46 @@ class EmpleadoDeleteView(DeleteView):
 
 
 # Lista de Proveedores
-def index_proveedores(request):
-    busqueda = request.GET.get("buscar")
-    proveedores = get_list_or_404(Proveedor.objects.order_by("nombre"))
-    page = request.GET.get("page", 1)
-    try:
-        paginator = Paginator(proveedores, 2)
-        proveedores = paginator.page(page)
-    except:
-        raise Http404
-    
+class ProveedorListView(View):
+    def get(self, request):
+        if ("buscar" in request.GET):
+            prlist = Proveedor.objects.filter(
+                nombre__icontains=request.GET["buscar"])
+        else:
+            prlist = Proveedor.objects.all()
 
-    if busqueda:
-        proveedores = Proveedor.objects.filter(
-            Q(nombre__icontains=busqueda) |
-            Q(telefono__icontains=busqueda)
-        ).distinct()
-    data = {"lista_proveedores": proveedores,
-            "paginator" : paginator}
-    return render(request, "proveedores_list.html", data)
+        return JsonResponse(list(prlist.values()), safe=False)
+
+#  def index_proveedores(request):
+#     busqueda = request.GET.get("buscar")
+#     proveedores = get_list_or_404(Proveedor.objects.order_by("nombre"))
+#     page = request.GET.get("page", 1)
+#     try:
+#         paginator = Paginator(proveedores, 2)
+#         proveedores = paginator.page(page)
+#     except:
+#         raise Http404
+#     if busqueda:
+#         proveedores = Proveedor.objects.filter(
+#             Q(nombre__icontains=busqueda) |
+#             Q(telefono__icontains=busqueda)
+#         ).distinct()
+#     data = {"lista_proveedores": proveedores,
+#             "paginator" : paginator}
+#     return render(request, "proveedores_list.html", data)
 
 # Datos de Proveedores
 
 
-def show_proveedor(request, proveedor_id):
-    proveedor = get_object_or_404(Proveedor, pk=proveedor_id)
-    context = {"proveedor": proveedor}
-    return render(request, "proveedor_descripcion.html", context)
+class ProveedorDetailView(View):
+    def get(self, request, pk):
+        proveedor = Proveedor.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(proveedor))
+
+# def show_proveedor(request, proveedor_id):
+#     proveedor = get_object_or_404(Proveedor, pk=proveedor_id)
+#     context = {"proveedor": proveedor}
+#     return render(request, "proveedor_descripcion.html", context)
 
 # Crear empleado
 
