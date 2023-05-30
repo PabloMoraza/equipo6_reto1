@@ -4,7 +4,17 @@
 
 {% block contenido %}
 <h2>Listado de equipos</h2>
+{% block busqueda %}
+<div class="busqueda">
+<form method="get">
+    <div class="busqueda1">
+        <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
 
+        <button type="submit" class="boton_busqueda">Buscar</button>
+    </div>
+</form>
+</div>
+{% endblock %}
 
 <div class="divprincipal">
     <button class="boton"><a class="enlace" href="/aplicacion/equipos/create">Crear Equipo</a></button>
