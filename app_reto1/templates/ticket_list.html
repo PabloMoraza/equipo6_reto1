@@ -2,12 +2,24 @@
 
 {% block titulo %} listado de tickets {% endblock %}
 
+{% block busqueda %}
+<div class="busqueda">
+    <form method="get">
+        <div class="busqueda1">
+            <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+
+            <button type="submit" class="boton_busqueda">Buscar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
 {% block contenido %}
 <h2>Listado de tickets</h2>
 
-{% if lista_tickets %}
 <div class="divprincipal">
     <button class="boton"><a class="enlace" href="/aplicacion/ticket/create">Crear Ticket</a></button>
+    {% if lista_tickets %}
     <div>
         <button class="boton" id="aumentar">Aumentar</button>
         <button class="boton" id="disminuir">Disminuir</button>

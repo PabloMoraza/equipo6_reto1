@@ -1,13 +1,24 @@
 {% extends "base.html" %}
 
 {% block titulo %} listado de empleados {% endblock %}
+{% block busqueda %}
+<div class="busqueda">
+<form method="get">
+    <div class="busqueda1">
+        <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
 
+        <button type="submit" class="boton_busqueda">Buscar</button>
+    </div>
+</form>
+</div>
+{% endblock %}
 {% block contenido %}
 <h2>Listado de empleados</h2>
 
-{% if lista_empleados %}
+
 <div class="divprincipal">
     <button class="boton"> <a class="enlace" href="/aplicacion/empleados/create">Crear Empleado</a></button>
+    {% if lista_empleados %}
     <div>
         <button class="boton" id="aumentar">Aumentar</button>
         <button class="boton" id="disminuir">Disminuir</button>

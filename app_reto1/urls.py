@@ -30,10 +30,10 @@ urlpatterns = [
     #Borrar empleados
     path('empleados/<pk>/delete', views.EmpleadoDeleteView.as_view(), name= 'empleado_delete'),
     # Visualizar proveedores
-    # path('proveedores/', views.index_proveedores, name='proveedores'),
-    # path("proveedores/<int:proveedor_id>/", views.show_proveedor, name="detalleproveedor"),
-    path('proveedores/', views.ProveedorListView.as_view(), name='proveedores'),
-    path("proveedores/<int:pk>/", views.ProveedorDetailView.as_view(), name="detalleproveedor"),
+     path('proveedores/', views.index_proveedores, name='proveedores'),
+    path("proveedores/<int:proveedor_id>/", views.show_proveedor, name="detalleproveedor"),
+    path('proveedores_api/', views.ProveedorListView.as_view(), name='proveedores_api'),
+    # path("proveedores_api/<int:pk>/", views.ProveedorDetailView.as_view(), name="detalleproveedor_api"),
     # Crear proveedores
     path('proveedores/create', views.ProveedorCreateView.as_view(), name='proveedor_create'),
     # Editar proveedores

@@ -8,6 +8,7 @@ body {
 
 
 }
+
 #tamanos{
     font-size: 20px;
     margin-top: 15px;
@@ -119,7 +120,7 @@ header {
     display: block;
     font-size: 14px;
     font-weight: bold;
-    color: #6c63ff;
+    /* color: #6c63ff; */
     margin-bottom: 5px;
 }
 
@@ -232,7 +233,10 @@ th {
     padding: 3px;
     background-color: #555B6E;
     color: #BEE3DB;
-
+}
+p{
+    color: #BEE3DB;
+    background-color: #555B6E;
 }
 
 td {

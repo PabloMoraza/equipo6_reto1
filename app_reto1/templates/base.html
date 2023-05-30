@@ -15,15 +15,7 @@
         <div class="header_izquierdo">
             <h1>Deustomach Innovation S.L.</h1>
         </div>
-        <div class="busqueda">
-            <form method="get">
-                <div class="busqueda1">
-                    <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
-               
-                    <button type="submit" class="boton_busqueda">Buscar</button>
-                </div>
-            </form>
-        </div>
+        {% block busqueda %}{% endblock %}
 
         <div class="der">
             <div class="der_izq">
@@ -33,16 +25,16 @@
             <div class="der_der">
                 <a href="/aplicacion/equipos/" class="link_head">Gestor de equipos</a>
                 <a href="/aplicacion/proveedores/" class="link_head">Gestor de proveedores</a>
-                <!-- <a href="{% templates 'proveedores_list_api.html' %}" class="link_head">Gestor de proveedores</a> -->
-                
-               
+
+
+
             </div>
         </div>
 
 
 
     </header>
-    <main >
+    <main>
         {% block contenido %}{% endblock %}
     </main>
     <footer>
@@ -58,6 +50,7 @@
     <script src="{% static 'js/evaluarEmpleado.js' %}"></script>
     <script src="{% static 'js/evaluarProveedor.js' %}"></script>
     <script src="{% static 'js/evaluarTicket.js' %}"></script>
+    <script src="{% static 'js/api_proveedores.js' %}"></script>
 </body>
 
 </html>
